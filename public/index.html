@@ -1,13 +1,17 @@
-<html>
-
+<html lang="en">
 <head>
-  <title>Express</title>
-  <link rel="stylesheet" href="/stylesheets/style.css">
+  <meta charset="UTF-8">
+  <title>Kyrio Schedio</title>
 </head>
 
-<body>
-  <h1>Express</h1>
-  <p>Welcome to Express</p>
+<body id="clrblk">
+<br>
+<h1>Kyrio Schedio, the online gig scheduler</h1><br>
+<form id="loginform" class="form-horizontal" role="form" method="post" action="/api/sessions">
+  <h3>Please Login</h3>
+  <input id="login-username" type="text" class="form-control" name="user_name" value="" placeholder="username"><br>
+  <input id="login-password" type="password" class="form-control" name="password" placeholder="password"><br>
+  <button id="btn-login" type="submit" class="btn btn-success">Login</button>
+</form>
 </body>
-
 </html>

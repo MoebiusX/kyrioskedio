@@ -3,12 +3,16 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "setup": "/usr/local/mysql-8.0.12-macos10.13-x86_64/bin/mysql -u root -p < initDB.sql"
   },
   "dependencies": {
+    "body-parser": "^1.19.0",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "express": "~4.16.1",
-    "morgan": "~1.9.1"
+    "express-session": "^1.17.1",
+    "morgan": "~1.9.1",
+    "mysql2": "^2.2.5"
   }
 }

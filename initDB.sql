@@ -1,4 +1,4 @@
-drop database kyrioskedio;
+drop database if exists kyrioskedio;
 create database if not exists kyrioskedio;
 
 create table if not exists kyrioskedio.user (
@@ -6,36 +6,36 @@ create table if not exists kyrioskedio.user (
   username varchar(30),
   password varchar(30),
   email  varchar(30),
-  userType  varchar(30)
+  usertype  varchar(30)
 ) ;
 insert ignore into kyrioskedio.user values
   (1, 'Admin', 'admin','admin@kyrioskedio.com', 'admin');
 insert ignore into kyrioskedio.user values
-  (2, 'John', 'john','agent1@localhost.es', 'cw');
+  (2, 'John', 'john','johndoe@gmail.com', 'cw');
 insert ignore into kyrioskedio.user values
-  (3, 'Jane', 'jane','agent2@localhost.es', 'cw');
+  (3, 'Jane', 'jane','janedoe@gmail.com', 'cw');
 
 create table if not exists kyrioskedio.event (
   eventid int primary key auto_increment,
   userid int,
-  date varchar(10),
-  inittime varchar(8),
-  endtime  varchar(8),
+  eventdate date,
+  inittime char(4),
+  endtime  char(4),
   note varchar(300)
 ) ;
 insert ignore into kyrioskedio.event values
-  (1, 2, '03-11-2020', '09:00AM', '11:00AM', '');
+  (1, 2, '2020-11-03', '0900', '1100', '');
 insert ignore into kyrioskedio.event values
-  (2, 2, '04-11-2020', '09:00AM', '11:00AM', '');
+  (2, 2, '2020-11-04', '0900', '1100', '');
 insert ignore into kyrioskedio.event values
-  (3, 3, '03-11-2020', '05:00PM', '11:00PM', '');
+  (3, 3, '03-11-2020', '1700', '2300', '');
 
 create table if not exists kyrioskedio.revision (
    revisionid int primary key auto_increment,
    workweek int,
    version int
 ) ;
-insert ignore into kyrioskedio.disclosure values
+insert ignore into kyrioskedio.revision values
   (1, 42, 1);
-insert ignore into kyrioskedio.disclosure values
+insert ignore into kyrioskedio.revision values
   (2, 43, 2);
